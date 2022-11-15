@@ -1,5 +1,6 @@
 package com.durys.jakub.mailservice.mail.service
 
+import com.durys.jakub.mailservice.mail.model.BaseMailDTO
 import org.springframework.mail.SimpleMailMessage
 import org.springframework.mail.javamail.JavaMailSender
 
