@@ -27,9 +27,7 @@ class MailConfiguration(@Value("\${mail-host}") private val host: String,
 
         mailSender.javaMailProperties.setProperty("mail.transport.protocol", "smtp")
         mailSender.javaMailProperties.setProperty("mail.smtp.auth", "true")
-        mailSender.javaMailProperties.setProperty("mail.smtp.starttls.enable", "true")
         mailSender.javaMailProperties.setProperty("mail.debug", "true")
-        mailSender.javaMailProperties.setProperty("mail.smtp.ssl.enable", "true")
         return mailSender
     }
 
