@@ -1,8 +1,11 @@
 package com.durys.jakub.mailservice.configuration
 
+import com.durys.jakub.mailservice.mail.service.MailSenderService
+import com.durys.jakub.mailservice.mail.service.SpringMailSenderService
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.mail.SimpleMailMessage
 import org.springframework.mail.javamail.JavaMailSender
 import org.springframework.mail.javamail.JavaMailSenderImpl
 
@@ -28,6 +31,11 @@ class MailConfiguration(@Value("\${mail-host}") private val host: String,
         mailSender.javaMailProperties.setProperty("mail.debug", "true")
         mailSender.javaMailProperties.setProperty("mail.smtp.ssl.enable", "true")
         return mailSender
+    }
+
+    @Bean
+    fun mailSenderService(mailSender: JavaMailSender): MailSenderService<SimpleMailMessage> {
+        return SpringMailSenderService(mailSender, username);
     }
 
 }
