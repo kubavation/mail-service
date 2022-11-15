@@ -1,6 +1,6 @@
 package com.durys.jakub.mailservice.mail.service
 
-interface MailSenderService {
+interface MailSenderService<in T> {
 
-     fun <T> send(message: T)
+     fun send(message: T)
 }
