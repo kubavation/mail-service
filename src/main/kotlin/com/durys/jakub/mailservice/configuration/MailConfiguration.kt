@@ -10,7 +10,7 @@ import org.springframework.mail.javamail.JavaMailSender
 import org.springframework.mail.javamail.JavaMailSenderImpl
 
 @Configuration
-class MailConfiguration(@Value("\${mail-host}") private val host: String,
+internal class MailConfiguration(@Value("\${mail-host}") private val host: String,
                         @Value("\${mail-port}") private val port: Int,
                         @Value("\${mail-username}") private val username: String,
                         @Value("\${mail-password}") private val password: String) {

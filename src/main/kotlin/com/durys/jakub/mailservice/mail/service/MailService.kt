@@ -8,10 +8,8 @@ import org.springframework.stereotype.Service
 @Service
 class MailService(private val mailSenderService: MailSenderService<SimpleMailMessage>) {
 
-    private val baseMailConverter = BaseMailConverter()
-
     fun convertAndSend(mailDTO: BaseMailDTO) {
-        val mail = baseMailConverter.convert(mailDTO)
+        val mail = BaseMailConverter.convert(mailDTO)
         mailSenderService.send(mail)
     }
 
