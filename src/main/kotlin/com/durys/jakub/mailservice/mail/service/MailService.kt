@@ -6,7 +6,7 @@ import org.springframework.mail.SimpleMailMessage
 import org.springframework.stereotype.Service
 
 @Service
-class MailService(private val mailSenderService: MailSenderService<SimpleMailMessage>) {
+internal class MailService(private val mailSenderService: MailSenderService<SimpleMailMessage>) {
 
     fun convertAndSend(mailDTO: BaseMailDTO) {
         val mail = BaseMailConverter.convert(mailDTO)

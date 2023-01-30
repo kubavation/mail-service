@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/mails")
-class MailCreatorController(private val mailService: MailService) {
+internal class MailCreatorController(private val mailService: MailService) {
 
     @PostMapping
     fun create(@RequestBody baseMail: BaseMailDTO) = mailService.convertAndSend(baseMail)
