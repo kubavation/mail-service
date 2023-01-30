@@ -9,8 +9,7 @@ import org.springframework.stereotype.Service
 internal class MailService(private val mailSenderService: MailSenderService<SimpleMailMessage>) {
 
     fun convertAndSend(mailDTO: BaseMailDTO) {
-        val mail = BaseMailConverter.convert(mailDTO)
-        mailSenderService.send(mail)
+        mailSenderService.send(BaseMailConverter convert mailDTO)
     }
 
 }
