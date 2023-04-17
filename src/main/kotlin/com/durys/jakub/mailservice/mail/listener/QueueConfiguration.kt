@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
 @Configuration
-class QueueConfiguration {
+internal class QueueConfiguration {
 
     @Bean
     fun notificationQueue(@Value("\${q.mail-queue}") mailQueue: String) = Queue(mailQueue)
